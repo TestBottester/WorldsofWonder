@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Guide</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Merriweather:wght@300;400&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Merriweather', serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #2c3e50;
             line-height: 1.6;
         }
-        
+
         .page {
             width: 210mm;
             min-height: 297mm;
             margin: 20px auto;
             background: #faf9f7;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             padding: 30px;
             position: relative;
             page-break-after: always;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(120,119,198,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,204,112,0.1) 0%, transparent 50%);
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(50, 5, 68, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 112, 212, 0.1) 0%, transparent 50%);
         }
-        
+
         .page::before {
             content: '';
             position: absolute;
@@ -43,7 +42,7 @@
             height: 8px;
             background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
         }
-        
+
         .title-page {
             text-align: center;
             display: flex;
@@ -53,44 +52,44 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
-        
+
         .main-title {
             font-family: 'Cinzel', serif;
             font-size: 3.5em;
             font-weight: 600;
             margin: 20px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             letter-spacing: 2px;
         }
-        
+
         .subtitle {
             font-size: 1.8em;
             font-style: italic;
             margin-bottom: 40px;
             opacity: 0.9;
         }
-        
+
         .quote {
             font-size: 1.2em;
             font-style: italic;
             margin: 30px 0;
             padding: 20px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             backdrop-filter: blur(10px);
         }
-        
+
         .section-title {
             font-family: 'Cinzel', serif;
             font-size: 2.8em;
             color: #5a4fcf;
             text-align: center;
             margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
             border-bottom: 3px solid #ff6b6b;
             padding-bottom: 15px;
         }
-        
+
         .day-header {
             background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
             color: white;
@@ -98,31 +97,31 @@
             border-radius: 15px;
             text-align: center;
             margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .day-number {
             font-family: 'Cinzel', serif;
             font-size: 2.5em;
             font-weight: 600;
         }
-        
+
         .day-title {
             font-size: 1.5em;
             margin-top: 10px;
             font-weight: 300;
         }
-        
+
         .activity-box {
             background: white;
             border: 3px solid #4ecdc4;
             border-radius: 15px;
             padding: 25px;
             margin: 25px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-        
+
         .activity-box::before {
             content: '✨';
             position: absolute;
@@ -138,7 +137,7 @@
             justify-content: center;
             font-size: 1.2em;
         }
-        
+
         .checklist {
             background: #f8f9fa;
             border-left: 5px solid #96ceb4;
@@ -146,21 +145,21 @@
             margin: 20px 0;
             border-radius: 0 10px 10px 0;
         }
-        
+
         .checklist-item {
             margin: 12px 0;
             display: flex;
             align-items: center;
             font-size: 1.1em;
         }
-        
+
         .checklist-item input[type="checkbox"] {
             width: 20px;
             height: 20px;
             margin-right: 15px;
             cursor: pointer;
         }
-        
+
         .writing-space {
             background: linear-gradient(to bottom, transparent 0%, transparent 95%, #ddd 95%, #ddd 100%);
             background-size: 100% 25px;
@@ -171,7 +170,7 @@
             margin: 20px 0;
             position: relative;
         }
-        
+
         .writing-space::before {
             content: '📝';
             position: absolute;
@@ -186,19 +185,20 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .map-space {
             background: #f9f7f4;
             border: 3px solid #8b5a2b;
             border-radius: 15px;
-            min-height: 400px;
+            min-height: 800px;
+            height: 100%;
             margin: 30px 0;
             position: relative;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(139,90,43,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(139,90,43,0.1) 0%, transparent 50%);
+            background-image:
+                radial-gradient(circle at 25% 25%, rgba(139, 90, 43, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 90, 43, 0.1) 0%, transparent 50%);
         }
-        
+
         .map-space::before {
             content: '🗺️ Draw Your World Here';
             position: absolute;
@@ -206,19 +206,19 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 2em;
-            color: rgba(139,90,43,0.3);
+            color: rgba(139, 90, 43, 0.3);
             font-family: 'Cinzel', serif;
         }
-        
+
         .character-card {
             background: linear-gradient(135deg, #ffeaa7, #fab1a0);
             border-radius: 20px;
             padding: 25px;
             margin: 25px 0;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             border: 2px solid #e17055;
         }
-        
+
         .character-card h3 {
             color: #2d3436;
             font-family: 'Cinzel', serif;
@@ -226,7 +226,7 @@
             margin-bottom: 20px;
             text-align: center;
         }
-        
+
         .input-field {
             background: white;
             border: 2px solid #ddd;
@@ -237,13 +237,13 @@
             font-size: 1.1em;
             transition: border-color 0.3s;
         }
-        
+
         .input-field:focus {
             outline: none;
             border-color: #4ecdc4;
-            box-shadow: 0 0 0 3px rgba(78,205,196,0.2);
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
         }
-        
+
         .textarea-field {
             background: white;
             border: 2px solid #ddd;
@@ -257,24 +257,24 @@
             resize: vertical;
             line-height: 1.8;
         }
-        
+
         .magic-system {
             background: linear-gradient(45deg, #a29bfe, #6c5ce7);
             color: white;
             border-radius: 20px;
             padding: 30px;
             margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(108,92,231,0.3);
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3);
         }
-        
+
         .magic-system h3 {
             font-family: 'Cinzel', serif;
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .timeline {
             background: #2d3436;
             color: white;
@@ -284,7 +284,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -296,31 +296,31 @@
             background-size: 50px 50px;
             opacity: 0.3;
         }
-        
+
         .timeline-event {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 20px;
             margin: 20px 0;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .tip-box {
             background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
             border-radius: 15px;
             padding: 20px;
             margin: 20px 0;
             border-left: 5px solid #e17055;
-            box-shadow: 0 5px 15px rgba(253,203,110,0.3);
+            box-shadow: 0 5px 15px rgba(253, 203, 110, 0.3);
         }
-        
+
         .tip-box::before {
             content: '💡 Tip: ';
             font-weight: 600;
             color: #2d3436;
         }
-        
+
         .example-box {
             background: #d1f2eb;
             border: 2px solid #52c41a;
@@ -329,7 +329,7 @@
             margin: 20px 0;
             position: relative;
         }
-        
+
         .example-box::before {
             content: '📖 Example';
             position: absolute;
@@ -342,7 +342,7 @@
             font-size: 0.9em;
             font-weight: 600;
         }
-        
+
         .page-number {
             position: absolute;
             bottom: 15px;
@@ -351,33 +351,36 @@
             font-size: 1.2em;
             color: #7f8c8d;
         }
-        
+
         .icon {
             font-size: 1.5em;
             margin-right: 10px;
             vertical-align: middle;
         }
-        
+
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin: 20px 0;
         }
-        
+
         .full-width {
             grid-column: 1 / -1;
         }
-        
+
         @media print {
-            body { background: white; }
-            .page { 
+            body {
+                background: white;
+            }
+
+            .page {
                 margin: 0;
                 box-shadow: none;
                 page-break-after: always;
             }
         }
-        
+
         .legend-box {
             background: #f8f9fa;
             border: 2px solid #6c757d;
@@ -385,1490 +388,1529 @@
             padding: 20px;
             margin: 20px 0;
         }
-        
+
         .legend-item {
             display: flex;
             align-items: center;
             margin: 10px 0;
             font-size: 1.1em;
         }
-        
+
         .drawing-space {
             background: white;
             border: 3px dashed #96ceb4;
             border-radius: 15px;
-            min-height: 250px;
+            min-height: 800px;
             margin: 20px 0;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(150,206,180,0.7);
+            color: rgba(150, 206, 180, 0.7);
             font-size: 1.5em;
             font-family: 'Cinzel', serif;
         }
     </style>
 </head>
+
 <body>
 
-<!-- TITLE PAGE -->
-<div class="page title-page">
-    <img src="hero.jpeg" width="100%" height="auto" alt="hero">
-    <h1 class="main-title">My World of Wonder</h1>
-    <p class="subtitle">A Guide Through My Fantasy World</p>
-    <div class="quote">
-        <p>"“It's the job that's never started as takes longest to finish.”
-― J.R.R. Tolkien, The Lord of the Rings"</p>
+    <!-- TITLE PAGE -->
+    <div class="page title-page">
+        <img src="https://img.freepik.com/free-photo/fairytale-scene-coming-out-book_23-2151778502.jpg?semt=ais_hybrid&w=740"
+            width="100%" height="auto" alt="hero">
+        <h1 class="main-title">My World of Wonder</h1>
+        <p class="subtitle">A Guide Through My Fantasy World</p>
+        <div class="quote">
+            <p>"“It's the job that's never started as takes longest to finish.”
+                ― J.R.R. Tolkien, The Lord of the Rings"</p>
+        </div>
+        <p style="font-size: 1.5em; margin-top: 50px;">Welcome, young storyteller, to your own fantasy adventure!</p>
     </div>
-    <p style="font-size: 1.5em; margin-top: 50px;">Welcome, young storyteller, to your own fantasy adventure!</p>
-</div>
 
-<!-- TABLE OF CONTENTS -->
-<div class="page">
-    <h2 class="section-title">📜 Table of Contents</h2>
-    
-    <div style="font-size: 1.3em; line-height: 2.5;">
-        <p><span class="icon">🌟</span><strong>Day 1:</strong> Welcome to Fantasy & Worldbuilding</p>
-        <p><span class="icon">🧙‍♂️</span><strong>Day 2:</strong> The Inhabitants of Your World</p>
-        <p><span class="icon">✨</span><strong>Day 3:</strong> Magic Systems</p>
-        <p><span class="icon">📚</span><strong>Day 4:</strong> World History</p>
-        <p><span class="icon">🗂️</span><strong>Day 5:</strong> The Guidebook Station</p>
-        <p><span class="icon">👥</span><strong>Day 6:</strong> Character Creation</p>
-        <p><span class="icon">⚔️</span><strong>Day 7:</strong> Conflicts & Rising Action</p>
-        <p><span class="icon">🎭</span><strong>Day 8:</strong> Show Don't Tell & Climax</p>
-        <p><span class="icon">🏁</span><strong>Day 9:</strong> Falling Action & Resolution</p>
-        <p><span class="icon">🎉</span><strong>Day 10:</strong> Final Stories & Sharing</p>
-    </div>
-    
-    <div class="tip-box" style="margin-top: 50px;">
-        This workbook is your companion through an amazing 10-day journey of creating your very own fantasy world and story. Each day builds on the last, so by the end you'll have created something truly magical!
-    </div>
-    
-    <div class="page-number">2</div>
-</div>
+    <!-- TABLE OF CONTENTS -->
+    <div class="page">
+        <h2 class="section-title">📜 Table of Contents</h2>
 
-<!-- DAY 1 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 1</div>
-        <div class="day-title">Welcome to Fantasy & Worldbuilding</div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🏰</span>What Makes a Fantasy World Special?</h3>
-        <p>Think about Middle-earth from <em>The Lord of the Rings</em> or Narnia from <em>The Chronicles of Narnia</em>. What makes these places feel real and magical at the same time?</p>
-        
-        <div class="writing-space">
-            <p><strong>Write your thoughts here:</strong></p>
+        <div style="font-size: 1.3em; line-height: 2.5;">
+            <p><span class="icon">🌟</span><strong>Day 1:</strong> Welcome to Fantasy & Worldbuilding</p>
+            <p><span class="icon">🧙‍♂️</span><strong>Day 2:</strong> The Inhabitants of Your World</p>
+            <p><span class="icon">✨</span><strong>Day 3:</strong> Magic Systems</p>
+            <p><span class="icon">📚</span><strong>Day 4:</strong> World History</p>
+            <p><span class="icon">🗂️</span><strong>Day 5:</strong> The Guidebook Station</p>
+            <p><span class="icon">👥</span><strong>Day 6:</strong> Character Creation</p>
+            <p><span class="icon">⚔️</span><strong>Day 7:</strong> Conflicts & Rising Action</p>
+            <p><span class="icon">🎭</span><strong>Day 8:</strong> Show Don't Tell & Climax</p>
+            <p><span class="icon">🏁</span><strong>Day 9:</strong> Falling Action & Resolution</p>
+            <p><span class="icon">🎉</span><strong>Day 10:</strong> Final Stories & Sharing</p>
         </div>
-    </div>
-    
-    <div class="example-box">
-        <h4>Famous Fantasy Worlds You Might Know:</h4>
-        <ul style="font-size: 1.1em; line-height: 2;">
-            <li>🧙‍♂️ Middle-earth (Tolkien)</li>
-            <li>🦁 Narnia (C.S. Lewis)</li>
-            <li>⚡ Hogwarts (Harry Potter)</li>
-            <li>❄️ Arendelle (Frozen)</li>
-        </ul>
-    </div>
-    
-    <div class="page-number">3</div>
-</div>
 
-<!-- DAY 1 PAGE 2 -->
-<div class="page">
-    <div class="checklist">
-        <h3><span class="icon">✅</span>Your World-Building Checklist</h3>
-        <p>Before we create your world, let's think about what every good fantasy world needs:</p>
-        
-        <div class="checklist-item">
-            <input type="checkbox" id="geography">
-            <label for="geography"><strong>Geography</strong> - Mountains, rivers, forests, deserts</label>
+        <div class="tip-box" style="margin-top: 50px;">
+            This workbook is your companion through an amazing 10-day journey of creating your very own fantasy world
+            and story. Each day builds on the last, so by the end you'll have created something truly magical!
         </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="inhabitants">
-            <label for="inhabitants"><strong>Inhabitants</strong> - Who lives there?</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="magic">
-            <label for="magic"><strong>Magic</strong> - How does it work?</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="history">
-            <label for="history"><strong>History</strong> - What happened before?</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="culture">
-            <label for="culture"><strong>Culture</strong> - How do people live?</label>
-        </div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🗺️</span>Your World's Name</h3>
-        <input type="text" class="input-field" placeholder="Write your world's name here..." style="font-size: 1.5em; text-align: center; font-family: 'Cinzel', serif;">
-    </div>
-    
-    <div class="tip-box">
-        <strong>Map-Making Tips:</strong><br>
-        • Start with basic shapes (circles for lakes, wavy lines for rivers)<br>
-        • Think about how geography affects where people live<br>
-        • Leave room for mysterious unexplored areas<br>
-        • Consider different climates and terrains
-    </div>
-    
-    <div class="page-number">4</div>
-</div>
 
-<!-- DAY 1 PAGE 3 -->
-<div class="page">
-    <div class="checklist">
-        <h3><span class="icon">🗺️</span>Map Elements</h3>
-        <div class="checklist-item">
-            <input type="checkbox" id="city">
-            <label for="city">At least one major city or settlement</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="water">
-            <label for="water">A body of water (river, lake, or sea)</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="mountains">
-            <label for="mountains">Mountains or hills</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="forest">
-            <label for="forest">A forest or wooded area</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="mysterious">
-            <label for="mysterious">A mysterious or dangerous place</label>
-        </div>
-                <div class="checklist-item">
-            <input type="checkbox" id="mysterious">
-            <label for="mysterious"> Write your own type of place here: _________________________</label>
-        </div>
+        <div class="page-number">2</div>
     </div>
-    
-    <div class="map-space">
-        <!-- Empty space for drawing map -->
-    </div>
-    
-    <div class="page-number">5</div>
-</div>
 
-<!-- DAY 1 PAGE 4 -->
-<div class="page">
-    <div class="legend-box">
-        <h3><span class="icon">🔍</span>Map Legend</h3>
-        <p>Write about each of these magical places on your map:</p>
-        
-        <div class="legend-item">
-            <strong>🏰 Cities/Towns:</strong>
-            <input type="text" class="input-field" style="margin-left: 20px;">
+    <!-- DAY 1 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 1</div>
+            <div class="day-title">Welcome to Fantasy & Worldbuilding</div>
         </div>
-        <div class="legend-item">
-            <strong>🏔️ Mountains:</strong>
-            <input type="text" class="input-field" style="margin-left: 20px;">
-        </div>
-        <div class="legend-item">
-            <strong>🌊 Water:</strong>
-            <input type="text" class="input-field" style="margin-left: 20px;">
-        </div>
-        <div class="legend-item">
-            <strong>🌲 Forests:</strong>
-            <input type="text" class="input-field" style="margin-left: 20px;">
-        </div>
-        <div class="legend-item">
-            <strong>⚡ Magical Places:</strong>
-            <input type="text" class="input-field" style="margin-left: 20px;">
-        </div>
-    </div>
-    
-    <div class="writing-space">
-        <p><strong>Notes about your world:</strong></p>
-    </div>
-    
-    <div class="page-number">6</div>
-</div>
 
-<!-- DAY 2 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 2</div>
-        <div class="day-title">The Inhabitants of Your World</div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🧙‍♂️</span>Magical Beings Workshop</h3>
-        <p>Every fantasy world needs interesting inhabitants! Think beyond humans - what magical creatures call your world home?</p>
-    </div>
-    
-    <div class="character-card">
-        <h3>Magical Being #1</h3>
-        
-        <div class="grid">
-            <div>
-                <p><strong>Name:</strong></p>
-                <input type="text" class="input-field">
-            </div>
-            <div>
-                <p><strong>Friendly, Neutral, or Dangerous?</strong></p>
-                <input type="text" class="input-field">
-            </div>
-        </div>
-        
-        <p><strong>Appearance (Draw or describe):</strong></p>
-        <div class="drawing-space">
-            Draw your creature here!
-        </div>
-        
-        <p><strong>Special Powers:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Where do they live?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Fun Fact:</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">7</div>
-</div>
+        <div class="activity-box">
+            <h3><span class="icon">🏰</span>What Makes a Fantasy World Special?</h3>
+            <p>Think about Middle-earth from <em>The Hobbit</em> or Narnia from <em>The Chronicles of
+                    Narnia</em>. What makes these places feel real and magical at the same time?</p>
 
-<!-- DAY 2 PAGE 2 -->
-<div class="page">
-    <div class="character-card">
-        <h3>Magical Being #2</h3>
-        
-        <div class="grid">
-            <div>
-                <p><strong>Name:</strong></p>
-                <input type="text" class="input-field">
-            </div>
-            <div>
-                <p><strong>Friendly, Neutral, or Dangerous?</strong></p>
-                <input type="text" class="input-field">
+            <div class="writing-space">
             </div>
         </div>
-        
-        <p><strong>Appearance (Draw or describe):</strong></p>
-        <div class="drawing-space">
-            Draw your creature here!
-        </div>
-        
-        <p><strong>Special Powers:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Where do they live?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Fun Fact:</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">8</div>
-</div>
 
-<!-- DAY 2 PAGE 3 -->
-<div class="page">
-    <div class="character-card">
-        <h3>Magical Being #3</h3>
-        
-        <div class="grid">
-            <div>
-                <p><strong>Name:</strong></p>
-                <input type="text" class="input-field">
-            </div>
-            <div>
-                <p><strong>Friendly, Neutral, or Dangerous?</strong></p>
-                <input type="text" class="input-field">
-            </div>
-        </div>
-        
-        <p><strong>Appearance (Draw or describe):</strong></p>
-        <div class="drawing-space">
-            Draw your creature here!
-        </div>
-        
-        <p><strong>Special Powers:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Where do they live?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Fun Fact:</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">9</div>
-</div>
-
-<!-- DAY 2 PAGE 4 -->
-<div class="page">
-    <div class="activity-box">
-        <h3><span class="icon">🎤</span>Presentation Prep</h3>
-        <p>Write three sentences about each being for your presentation:</p>
-        
-        <p><strong>Being 1:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Being 2:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Being 3:</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="tip-box">
-        <strong>Map Update:</strong> Now mark on your map where each of your magical beings lives! Use special symbols and add them.
-    </div>
-    
-    <div class="writing-space">
-        <p><strong>Additional notes about your magical beings:</strong></p>
-    </div>
-    
-    <div class="page-number">10</div>
-</div>
-
-<!-- DAY 3 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 3</div>
-        <div class="day-title">Magic Systems</div>
-    </div>
-    
-    <div class="magic-system">
-        <h3>✨ How Does Magic Work in Your World?</h3>
-        <p>In <em>Harry Potter</em>, wizards use wands and spells. In <em>Lord of the Rings</em>, magic is more mysterious and tied to special people and objects. What will magic be like in your world?</p>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🔮</span>Magic System Design</h3>
-        
-        <p><strong>1. Who can use magic?</strong></p>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="everyone">
-                <label for="everyone">Everyone</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="certain">
-                <label for="certain">Only certain people</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="creatures">
-                <label for="creatures">Only magical creatures</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="learn">
-                <label for="learn">Anyone who learns how</label>
-            </div>
-        </div>
-        <p><strong>Other:</strong></p>
-        <input type="text" class="input-field">
-    </div>
-    
-    <div class="page-number">11</div>
-</div>
-
-<!-- DAY 3 PAGE 2 -->
-<div class="page">
-    <div class="activity-box">
-        <p><strong>2. What do they need to use magic?</strong></p>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="spells">
-                <label for="spells">Special words (spells)</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="wands">
-                <label for="wands">Magic wands/staffs</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="objects">
-                <label for="objects">Magical objects</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="gestures">
-                <label for="gestures">Hand gestures</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="concentration">
-                <label for="concentration">Concentration only</label>
-            </div>
-        </div>
-        <p><strong>Other:</strong></p>
-        <input type="text" class="input-field">
-        
-        <p><strong>3. What kinds of magic are possible?</strong></p>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="elemental">
-                <label for="elemental">Elemental (fire, water, earth, air)</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="healing">
-                <label for="healing">Healing</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="shapeshifting">
-                <label for="shapeshifting">Shape-changing</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="teleportation">
-                <label for="teleportation">Teleportation</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="animals">
-                <label for="animals">Talking to animals</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="appearing">
-                <label for="appearing">Making things appear/disappear</label>
-            </div>
-        </div>
-        <p><strong>Other:</strong></p>
-        <input type="text" class="input-field">
-    </div>
-    
-    <div class="page-number">12</div>
-</div>
-
-<!-- DAY 3 PAGE 3 -->
-<div class="page">
-    <div class="activity-box">
-        <p><strong>4. Are there limits to magic?</strong></p>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="tiring">
-                <label for="tiring">It's very tiring to use</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="times">
-                <label for="times">Only works at certain times</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="dangerous">
-                <label for="dangerous">Dangerous if used wrong</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="limited">
-                <label for="limited">Can only be used a few times per day</label>
-            </div>
-        </div>
-        <p><strong>Other:</strong></p>
-        <input type="text" class="input-field">
-        
-        <p><strong>5. What does magic look like?</strong></p>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="lights">
-                <label for="lights">Colorful lights</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="sparkles">
-                <label for="sparkles">Sparkles</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="glowing">
-                <label for="glowing">Glowing</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="invisible">
-                <label for="invisible">Invisible</label>
-            </div>
-        </div>
-        <p><strong>Other:</strong></p>
-        <input type="text" class="input-field">
-    </div>
-    
-    <div class="page-number">13</div>
-</div>
-
-<!-- DAY 3 PAGE 4 -->
-<div class="page">
-    <div class="magic-system">
-        <h3>🔮 Your Magic System Summary</h3>
-        <p>Write a paragraph explaining how magic works in your world:</p>
-        <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">📜</span>Magic Rules</h3>
-        <p>Every good magic system has rules. Write 3 important rules for magic in your world:</p>
-        
-        <p><strong>Rule 1:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Rule 2:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Rule 3:</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">14</div>
-</div>
-
-<!-- DAY 4 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 4</div>
-        <div class="day-title">World History</div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">📚</span>Creating Your World's Timeline</h3>
-        <p>Every world has a history! Think about important events that happened before your story begins.</p>
-    </div>
-    
-    <div class="timeline">
-        <h3>⏳ Major Historical Periods</h3>
-        
-        <div class="timeline-event">
-            <h4>🌅 The Ancient Times (Long, long ago)</h4>
-            <p>What happened when your world was very young?</p>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>🏛️ The Age of _________________ (Long ago)</h4>
-            <p>What important thing happened in the past?</p>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>📖 The Recent Past (Within living memory)</h4>
-            <p>What do the oldest inhabitants remember?</p>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>🌟 The Present Day (When your story happens)</h4>
-            <p>What's happening now?</p>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-    </div>
-    
-    <div class="page-number">15</div>
-</div>
-
-<!-- DAY 4 PAGE 2 -->
-<div class="page">
-    <div class="activity-box">
-        <h3><span class="icon">⚔️</span>Important Historical Events</h3>
-        
-        <div class="character-card">
-            <h4>Event 1</h4>
-            <p><strong>Event Name:</strong></p>
-            <input type="text" class="input-field">
-            <p><strong>When:</strong></p>
-            <input type="text" class="input-field">
-            <p><strong>What happened:</strong></p>
-            <textarea class="textarea-field"></textarea>
-            <p><strong>Why is it important:</strong></p>
-            <textarea class="textarea-field"></textarea>
-        </div>
-        
-        <div class="character-card">
-            <h4>Event 2</h4>
-            <p><strong>Event Name:</strong></p>
-            <input type="text" class="input-field">
-            <p><strong>When:</strong></p>
-            <input type="text" class="input-field">
-            <p><strong>What happened:</strong></p>
-            <textarea class="textarea-field"></textarea>
-            <p><strong>Why is it important:</strong></p>
-            <textarea class="textarea-field"></textarea>
-        </div>
-    </div>
-    
-    <div class="page-number">16</div>
-</div>
-
-<!-- DAY 4 PAGE 3 -->
-<div class="page">
-    <div class="character-card">
-        <h4>Event 3</h4>
-        <p><strong>Event Name:</strong></p>
-        <input type="text" class="input-field">
-        <p><strong>When:</strong></p>
-        <input type="text" class="input-field">
-        <p><strong>What happened:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        <p><strong>Why is it important:</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="tip-box">
-        <strong>Historical Locations:</strong> Mark these places on your map!<br>
-        • <strong>Ancient Ruins:</strong> Where something important happened long ago<br>
-        • <strong>Battlefields:</strong> Where a great conflict took place<br>
-        • <strong>Sacred Places:</strong> Special locations in your world's history<br>
-        • <strong>Lost Cities:</strong> Places that were once great but are now forgotten
-    </div>
-    
-    <div class="drawing-space">
-        Timeline Drawing Space - Create a visual timeline here!
-    </div>
-    
-    <div class="page-number">17</div>
-</div>
-
-<!-- DAY 5 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 5</div>
-        <div class="day-title">The Guidebook Station</div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">📖</span>Weekend Project: Create Your World's Guidebook</h3>
-        <p>Your mission is to create a short guidebook for visitors to your fantasy world!</p>
-    </div>
-    
-    <div class="magic-system">
-        <h3>🌟 Section 1: Welcome to Your World</h3>
-        <p>Write a welcoming introduction to your world:</p>
-        <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 150px;"></textarea>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🗺️</span>Section 2: Important Places to Visit</h3>
-        <p>List 5 must-see locations in your world:</p>
-        
-        <div class="grid">
-            <div>
-                <p><strong>1. Place:</strong></p>
-                <input type="text" class="input-field">
-                <p><strong>Why visit:</strong></p>
-                <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-            </div>
-            <div>
-                <p><strong>2. Place:</strong></p>
-                <input type="text" class="input-field">
-                <p><strong>Why visit:</strong></p>
-                <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-            </div>
-        </div>
-    </div>
-    
-    <div class="page-number">18</div>
-</div>
-
-<!-- DAY 5 PAGE 2 -->
-<div class="page">
-    <div class="grid">
-        <div>
-            <p><strong>3. Place:</strong></p>
-            <input type="text" class="input-field">
-            <p><strong>Why visit:</strong></p>
-            <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-        </div>
-        <div>
-            <p><strong>4. Place:</strong></p>
-            <input type="text" class="input-field">
-            <p><strong>Why visit:</strong></p>
-            <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-        </div>
-    </div>
-    
-    <div class="character-card">
-        <p><strong>5. Place:</strong></p>
-        <input type="text" class="input-field">
-        <p><strong>Why visit:</strong></p>
-        <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">👥</span>Section 3: Meet the Locals</h3>
-        <p>Describe the beings who live in your world:</p>
-        <textarea class="textarea-field" style="min-height: 120px;"></textarea>
-    </div>
-    
-    <div class="page-number">19</div>
-</div>
-
-<!-- DAY 5 PAGE 3 -->
-<div class="page">
-    <div class="magic-system">
-        <h3>⚡ Section 4: Magic & Safety</h3>
-        <p>What should visitors know about magic in your world?</p>
-        <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 120px;"></textarea>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🎭</span>Section 5: Cultural Tips</h3>
-        <p>How should visitors behave in your world?</p>
-        <textarea class="textarea-field" style="min-height: 120px;"></textarea>
-    </div>
-    
-    <div class="tip-box">
-        <strong>Station Activity Notes:</strong> Use the space below to record ideas from each station during your group activity.
-    </div>
-    
-    <div class="grid">
-        <div>
-            <p><strong>Geography Station Ideas:</strong></p>
-            <textarea class="textarea-field" style="min-height: 100px;"></textarea>
-            
-            <p><strong>Culture Station Ideas:</strong></p>
-            <textarea class="textarea-field" style="min-height: 100px;"></textarea>
-        </div>
-        <div>
-            <p><strong>Magic Station Ideas:</strong></p>
-            <textarea class="textarea-field" style="min-height: 100px;"></textarea>
-            
-            <p><strong>History Station Ideas:</strong></p>
-            <textarea class="textarea-field" style="min-height: 100px;"></textarea>
-        </div>
-    </div>
-    
-    <div class="page-number">20</div>
-</div>
-
-<!-- DAY 6 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 6</div>
-        <div class="day-title">Character Creation</div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🦸‍♀️</span>Meet Your Main Character</h3>
-        <p>Every great fantasy story needs a hero! Time to create yours.</p>
-    </div>
-    
-    <div class="character-card">
-        <h3>Basic Character Information</h3>
-        
-        <div class="grid">
-            <div>
-                <p><strong>Name:</strong></p>
-                <input type="text" class="input-field">
-            </div>
-            <div>
-                <p><strong>Age:</strong></p>
-                <input type="text" class="input-field">
-            </div>
-        </div>
-        
-        <p><strong>What do they look like?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Where are they from in your world?</strong></p>
-        <input type="text" class="input-field">
-        
-        <p><strong>What makes them special?</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="drawing-space">
-        Draw your main character here!
-    </div>
-    
-    <div class="page-number">21</div>
-</div>
-
-<!-- DAY 6 PAGE 2 -->
-<div class="page">
-    <div class="activity-box">
-        <h3><span class="icon">🏠</span>Character's Background</h3>
-        
-        <p><strong>Family:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Home:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Daily Life (What do they do on a normal day?):</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Dreams/Goals (What do they want?):</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Fears (What scares them?):</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">22</div>
-</div>
-
-<!-- DAY 6 PAGE 3 -->
-<div class="page">
-    <div class="activity-box">
-        <h3><span class="icon">💪</span>Character's Abilities</h3>
-        
-        <p><strong>Special Skills:</strong></p>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="magic-skill">
-                <label for="magic-skill">Good with magic</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="brave">
-                <label for="brave">Brave in danger</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="puzzles">
-                <label for="puzzles">Good at solving puzzles</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="kind">
-                <label for="kind">Kind to others</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="quick">
-                <label for="quick">Quick thinking</label>
-            </div>
-        </div>
-        <p><strong>Other:</strong></p>
-        <input type="text" class="input-field">
-        
-        <p><strong>Weaknesses (Everyone has them!):</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="example-box">
-        <h4>What is Exposition?</h4>
-        <p><strong>Exposition</strong> means introducing your character and setting. Here's how to do it well:</p>
-        <p><strong>Good Exposition Shows:</strong></p>
-        <ul>
-            <li>Where the character is</li>
-            <li>What they're doing</li>
-            <li>A little about their personality</li>
-            <li>A hint about what's coming</li>
-        </ul>
-        <p><em>Example: "Lily had always loved mornings in the Crystal Gardens, but today something felt different. The usually singing flowers were silent, and the magical butterflies that normally danced around the fountain were nowhere to be seen."</em></p>
-    </div>
-    
-    <div class="page-number">23</div>
-</div>
-
-<!-- DAY 6 PAGE 4 -->
-<div class="page">
-    <div class="magic-system">
-        <h3>✍️ Your Opening Scene</h3>
-        <p>Write the opening paragraph of your story:</p>
-        <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 200px;"></textarea>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🎬</span>Setting Details</h3>
-        
-        <p><strong>Where does your story begin?</strong></p>
-        <input type="text" class="input-field">
-        
-        <p><strong>What time of day/year is it?</strong></p>
-        <input type="text" class="input-field">
-        
-        <p><strong>What's the mood/atmosphere?</strong></p>
-        <input type="text" class="input-field">
-        
-        <p><strong>What hint of adventure do you give?</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">24</div>
-</div>
-
-<!-- DAY 7 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 7</div>
-        <div class="day-title">Conflicts & Rising Action</div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">⚔️</span>Understanding Conflict</h3>
-        <p>Every good story needs conflict - problems for your character to solve!</p>
-    </div>
-    
-    <div class="grid">
-        <div class="character-card">
-            <h4>🧠 Internal Conflict</h4>
-            <p><em>(Inside the character)</em></p>
-            <ul>
-                <li>Fear of trying something new</li>
-                <li>Choosing between right and wrong</li>
-                <li>Learning to believe in themselves</li>
+        <div class="example-box">
+            <h4>Famous Fantasy Worlds You Might Know:</h4>
+            <ul style="font-size: 1.1em; line-height: 2;">
+                <li>🧙‍♂️ Middle-earth (Tolkien)</li>
+                <li>🦁 Narnia (C.S. Lewis)</li>
+                <li>⚡ Hogwarts (Harry Potter)</li>
+                <li>❄️ Arendelle (Frozen)</li>
             </ul>
         </div>
-        <div class="character-card">
-            <h4>🌍 External Conflict</h4>
-            <p><em>(Outside forces)</em></p>
-            <ul>
-                <li>Fighting a villain</li>
-                <li>Surviving a dangerous place</li>
-                <li>Solving a mystery</li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">📝</span>Your Story's Conflicts</h3>
-        
-        <p><strong>Main External Conflict (The big problem):</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Internal Conflict (Your character's inner struggle):</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Smaller Conflicts (Problems along the way):</strong></p>
-        <p><strong>1.</strong></p>
-        <input type="text" class="input-field">
-        <p><strong>2.</strong></p>
-        <input type="text" class="input-field">
-        <p><strong>3.</strong></p>
-        <input type="text" class="input-field">
-    </div>
-    
-    <div class="page-number">25</div>
-</div>
 
-<!-- DAY 7 PAGE 2 -->
-<div class="page">
-    <div class="timeline">
-        <h3>📈 Rising Action Planning</h3>
-        <p>Rising action is all the events that build up to the most exciting part of your story.</p>
-        
-        <div class="timeline-event">
-            <h4>Event 1 (First sign of trouble)</h4>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>Event 2 (Problem gets bigger)</h4>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>Event 3 (Character faces a challenge)</h4>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>Event 4 (Stakes get higher)</h4>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>Event 5 (Almost at the climax!)</h4>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-    </div>
-    
-    <div class="page-number">26</div>
-</div>
+        <div class="activity-box">
+            <h3><span class="icon">🏰</span>Can you think of any other fantasy worlds from books or films? Write some of
+                your favourites here!</h3>
 
-<!-- DAY 7 PAGE 3 -->
-<div class="page">
-    <div class="tip-box">
-        <strong>Conflict Escalation:</strong> Each event should make the problem bigger or more urgent.
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">📊</span>How does each event make things worse or more exciting?</h3>
-        
-        <p><strong>Event 1 → Event 2:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Event 2 → Event 3:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Event 3 → Event 4:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Event 4 → Event 5:</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="writing-space">
-        <p><strong>Additional notes about your story's conflicts:</strong></p>
-    </div>
-    
-    <div class="page-number">27</div>
-</div>
+            <div class="writing-space">
+            </div>
+        </div>
 
-<!-- DAY 8 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 8</div>
-        <div class="day-title">Show Don't Tell & Climax</div>
+        <div class="page-number">3</div>
     </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🎭</span>Show Don't Tell</h3>
-        <p>Instead of telling readers what's happening, show them through actions, dialogue, and details!</p>
-    </div>
-    
-    <div class="example-box">
-        <h4>Tell vs. Show Examples</h4>
-        <p><strong>Tell:</strong> <em>Sarah was scared.</em></p>
-        <p><strong>Show:</strong> <em>Sarah's hands shook as she reached for the door handle, and she could hear her heart pounding in her ears.</em></p>
-        <br>
-        <p><strong>Tell:</strong> <em>The dragon was big.</em></p>
-        <p><strong>Show:</strong> <em>The dragon's shadow covered the entire village, and when it roared, windows shattered three streets away.</em></p>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">✏️</span>Practice Show Don't Tell</h3>
-        <p>Rewrite these "tell" sentences as "show" sentences:</p>
-        
-        <p><strong>Tell:</strong> <em>The magical forest was beautiful.</em></p>
-        <p><strong>Show:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Tell:</strong> <em>Marcus was angry.</em></p>
-        <p><strong>Show:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Tell:</strong> <em>The spell was powerful.</em></p>
-        <p><strong>Show:</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">28</div>
-</div>
 
-<!-- DAY 8 PAGE 2 -->
-<div class="page">
-    <div class="magic-system">
-        <h3>🎯 Writing Your Climax</h3>
-        <p>The climax is the most exciting part of your story - where your character faces their biggest challenge!</p>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🗺️</span>Climax Planning</h3>
-        
-        <p><strong>Where does the climax happen?</strong></p>
-        <input type="text" class="input-field">
-        
-        <p><strong>Who is involved?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>What is the main challenge your character faces?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>What must your character do to succeed?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-<p><strong>How does your character overcome this challenge?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>What role does the internal conflict play?</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">29</div>
-</div>
+    <!-- DAY 1 PAGE 2 -->
+    <div class="page">
+        <div class="checklist">
+            <h3><span class="icon">✅</span>Your World-Building Checklist</h3>
+            <p>Before we create your world, let's think about what every good fantasy world needs:</p>
 
-<!-- DAY 8 PAGE 3 -->
-<div class="page">
-    <div class="activity-box">
-        <h3><span class="icon">🥊</span>Action Sequence Enrichment</h3>
-        <p>Make your climax exciting with these techniques:</p>
-        
+            <div class="checklist-item">
+                <input type="checkbox" id="geography">
+                <label for="geography"><strong>Geography</strong> - Mountains, rivers, forests, deserts</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="inhabitants">
+                <label for="inhabitants"><strong>Inhabitants</strong> - Who lives there?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="magic">
+                <label for="magic"><strong>Magic</strong> - How does it work?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="history">
+                <label for="history"><strong>History</strong> - What happened before?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="culture">
+                <label for="culture"><strong>Culture</strong> - How do people live?</label>
+            </div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🗺️</span>Your World's Name</h3>
+            <input type="text" class="input-field" placeholder="Write your world's name here..."
+                style="font-size: 1.5em; text-align: center; font-family: 'Cinzel', serif;">
+        </div>
+
         <div class="tip-box">
-            <strong>Action Writing Tips:</strong><br>
-            • Use short, quick sentences during fast action<br>
-            • Show the character's physical reactions<br>
-            • Include sounds, smells, and textures<br>
-            • Let readers feel the character's emotions
+            <strong>Map-Making Tips:</strong><br>
+            • Start with basic shapes (circles for lakes, wavy lines for rivers)<br>
+            • Think about how geography affects where people live<br>
+            • Leave room for mysterious unexplored areas<br>
+            • Consider different climates and terrains
         </div>
-        
-        <p><strong>Describe the setting of your climax using all five senses:</strong></p>
-        
+
+        <div class="page-number">4</div>
+    </div>
+
+    <!-- DAY 1 PAGE 3 -->
+    <div class="page">
+        <div class="checklist">
+            <h3><span class="icon">🗺️</span>Map Elements</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="city">
+                <label for="city">At least one major city or settlement</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="water">
+                <label for="water">A body of water (river, lake, or sea)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="mountains">
+                <label for="mountains">Mountains or hills</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="forest">
+                <label for="forest">A forest or wooded area</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="mysterious">
+                <label for="mysterious">A mysterious or dangerous place</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="mysterious">
+                <label for="mysterious"> Write your own type of place here: _________________________</label>
+            </div>
+        </div>
+
+        <div class="map-space">
+            <!-- Empty space for drawing map -->
+        </div>
+
+        <div class="page-number">5</div>
+    </div>
+
+    <!-- DAY 1 PAGE 4 -->
+    <div class="page">
+        <div class="legend-box">
+            <h3><span class="icon">🔍</span>Map Legend</h3>
+            <p>Write about each of these magical places on your map:</p>
+
+            <div class="legend-item">
+                <strong>🏰 Cities/Towns:</strong>
+                <input type="text" class="input-field" style="margin-left: 20px;">
+            </div>
+            <div class="legend-item">
+                <strong>🏔️ Mountains:</strong>
+                <input type="text" class="input-field" style="margin-left: 20px;">
+            </div>
+            <div class="legend-item">
+                <strong>🌊 Water:</strong>
+                <input type="text" class="input-field" style="margin-left: 20px;">
+            </div>
+            <div class="legend-item">
+                <strong>🌲 Forests:</strong>
+                <input type="text" class="input-field" style="margin-left: 20px;">
+            </div>
+            <div class="legend-item">
+                <strong>⚡ Magical Places:</strong>
+                <input type="text" class="input-field" style="margin-left: 20px;">
+            </div>
+        </div>
+
+        <div class="writing-space">
+            <p><strong>Notes about your world:</strong></p>
+        </div>
+
+        <div class="page-number">6</div>
+    </div>
+
+    <!-- DAY 2 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 2</div>
+            <div class="day-title">The Inhabitants of Your World</div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🧙‍♂️</span>Magical Beings Workshop</h3>
+            <p>Every fantasy world needs interesting inhabitants! Think beyond humans - what magical creatures call your
+                world home?</p>
+        </div>
+
+        <div class="character-card">
+            <h3>Magical Being #1</h3>
+
+            <div class="grid">
+                <div>
+                    <p><strong>Name:</strong></p>
+                    <input type="text" class="input-field">
+                </div>
+                <div>
+                    <p><strong>Friendly, Neutral, or Dangerous?</strong></p>
+                    <input type="text" class="input-field">
+                </div>
+            </div>
+
+            <p><strong>Appearance (Draw or describe):</strong></p>
+            <div class="drawing-space">
+                Draw your creature here!
+            </div>
+
+            <p><strong>Special Powers:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Where do they live?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Fun Fact:</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">7</div>
+    </div>
+
+    <!-- DAY 2 PAGE 2 -->
+    <div class="page">
+        <div class="character-card">
+            <h3>Magical Being #2</h3>
+
+            <div class="grid">
+                <div>
+                    <p><strong>Name:</strong></p>
+                    <input type="text" class="input-field">
+                </div>
+                <div>
+                    <p><strong>Friendly, Neutral, or Dangerous?</strong></p>
+                    <input type="text" class="input-field">
+                </div>
+            </div>
+
+            <p><strong>Appearance (Draw or describe):</strong></p>
+            <div class="drawing-space">
+                Draw your creature here!
+            </div>
+
+            <p><strong>Special Powers:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Where do they live?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Fun Fact:</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">8</div>
+    </div>
+
+    <!-- DAY 2 PAGE 3 -->
+    <div class="page">
+        <div class="character-card">
+            <h3>Magical Being #3</h3>
+
+            <div class="grid">
+                <div>
+                    <p><strong>Name:</strong></p>
+                    <input type="text" class="input-field">
+                </div>
+                <div>
+                    <p><strong>Friendly, Neutral, or Dangerous?</strong></p>
+                    <input type="text" class="input-field">
+                </div>
+            </div>
+
+            <p><strong>Appearance (Draw or describe):</strong></p>
+            <div class="drawing-space">
+                Draw your creature here!
+            </div>
+
+            <p><strong>Special Powers:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Where do they live?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Fun Fact:</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">9</div>
+    </div>
+
+    <!-- DAY 2 PAGE 4 -->
+    <div class="page">
+        <div class="activity-box">
+            <h3><span class="icon">🎤</span>Presentation Prep</h3>
+            <p>Write three sentences about each being for your presentation:</p>
+
+            <p><strong>Being 1:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Being 2:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Being 3:</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="tip-box">
+            <strong>Map Update:</strong> Now mark on your map where each of your magical beings lives! Use special
+            symbols and add them.
+        </div>
+
+        <div class="writing-space">
+            <p><strong>Additional notes about your magical beings:</strong></p>
+        </div>
+
+        <div class="page-number">10</div>
+    </div>
+
+    <!-- DAY 3 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 3</div>
+            <div class="day-title">Magic Systems</div>
+        </div>
+
+        <div class="magic-system">
+            <h3>✨ How Does Magic Work in Your World?</h3>
+            <p>In <em>Harry Potter</em>, wizards use wands and spells. In <em>Lord of the Rings</em>, magic is more
+                mysterious and tied to special people and objects. What will magic be like in your world?</p>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🔮</span>Magic System Design</h3>
+
+            <p><strong>1. Who can use magic?</strong></p>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="everyone">
+                    <label for="everyone">Everyone</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="certain">
+                    <label for="certain">Only certain people</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="creatures">
+                    <label for="creatures">Only magical creatures</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="learn">
+                    <label for="learn">Anyone who learns how</label>
+                </div>
+            </div>
+            <p><strong>Other:</strong></p>
+            <input type="text" class="input-field">
+        </div>
+
+        <div class="page-number">11</div>
+    </div>
+
+    <!-- DAY 3 PAGE 2 -->
+    <div class="page">
+        <div class="activity-box">
+            <p><strong>2. What do they need to use magic?</strong></p>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="spells">
+                    <label for="spells">Special words (spells)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="wands">
+                    <label for="wands">Magic wands/staffs</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="objects">
+                    <label for="objects">Magical objects</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="gestures">
+                    <label for="gestures">Hand gestures</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="concentration">
+                    <label for="concentration">Concentration only</label>
+                </div>
+            </div>
+            <p><strong>Other:</strong></p>
+            <input type="text" class="input-field">
+
+            <p><strong>3. What kinds of magic are possible?</strong></p>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="elemental">
+                    <label for="elemental">Elemental (fire, water, earth, air)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="healing">
+                    <label for="healing">Healing</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="shapeshifting">
+                    <label for="shapeshifting">Shape-changing</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="teleportation">
+                    <label for="teleportation">Teleportation</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="animals">
+                    <label for="animals">Talking to animals</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="appearing">
+                    <label for="appearing">Making things appear/disappear</label>
+                </div>
+            </div>
+            <p><strong>Other:</strong></p>
+            <input type="text" class="input-field">
+        </div>
+
+        <div class="page-number">12</div>
+    </div>
+
+    <!-- DAY 3 PAGE 3 -->
+    <div class="page">
+        <div class="activity-box">
+            <p><strong>4. Are there limits to magic?</strong></p>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="tiring">
+                    <label for="tiring">It's very tiring to use</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="times">
+                    <label for="times">Only works at certain times</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="dangerous">
+                    <label for="dangerous">Dangerous if used wrong</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="limited">
+                    <label for="limited">Can only be used a few times per day</label>
+                </div>
+            </div>
+            <p><strong>Other:</strong></p>
+            <input type="text" class="input-field">
+
+            <p><strong>5. What does magic look like?</strong></p>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="lights">
+                    <label for="lights">Colorful lights</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="sparkles">
+                    <label for="sparkles">Sparkles</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="glowing">
+                    <label for="glowing">Glowing</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="invisible">
+                    <label for="invisible">Invisible</label>
+                </div>
+            </div>
+            <p><strong>Other:</strong></p>
+            <input type="text" class="input-field">
+        </div>
+
+        <div class="page-number">13</div>
+    </div>
+
+    <!-- DAY 3 PAGE 4 -->
+    <div class="page">
+        <div class="magic-system">
+            <h3>🔮 Your Magic System Summary</h3>
+            <p>Write a paragraph explaining how magic works in your world:</p>
+            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">📜</span>Magic Rules</h3>
+            <p>Every good magic system has rules. Write 3 important rules for magic in your world:</p>
+
+            <p><strong>Rule 1:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Rule 2:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Rule 3:</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">14</div>
+    </div>
+
+    <!-- DAY 4 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 4</div>
+            <div class="day-title">World History</div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">📚</span>Creating Your World's Timeline</h3>
+            <p>Every world has a history! Think about important events that happened before your story begins.</p>
+        </div>
+
+        <div class="timeline">
+            <h3>⏳ Major Historical Periods</h3>
+
+            <div class="timeline-event">
+                <h4>🌅 The Ancient Times (Long, long ago)</h4>
+                <p>What happened when your world was very young?</p>
+                <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>🏛️ The Age of _________________ (Long ago)</h4>
+                <p>What important thing happened in the past?</p>
+                <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>📖 The Recent Past (Within living memory)</h4>
+                <p>What do the oldest inhabitants remember?</p>
+                <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>🌟 The Present Day (When your story happens)</h4>
+                <p>What's happening now?</p>
+                <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+            </div>
+        </div>
+
+        <div class="page-number">15</div>
+    </div>
+
+    <!-- DAY 4 PAGE 2 -->
+    <div class="page">
+        <div class="activity-box">
+            <h3><span class="icon">⚔️</span>Important Historical Events</h3>
+
+            <div class="character-card">
+                <h4>Event 1</h4>
+                <p><strong>Event Name:</strong></p>
+                <input type="text" class="input-field">
+                <p><strong>When:</strong></p>
+                <input type="text" class="input-field">
+                <p><strong>What happened:</strong></p>
+                <textarea class="textarea-field"></textarea>
+                <p><strong>Why is it important:</strong></p>
+                <textarea class="textarea-field"></textarea>
+            </div>
+
+            <div class="character-card">
+                <h4>Event 2</h4>
+                <p><strong>Event Name:</strong></p>
+                <input type="text" class="input-field">
+                <p><strong>When:</strong></p>
+                <input type="text" class="input-field">
+                <p><strong>What happened:</strong></p>
+                <textarea class="textarea-field"></textarea>
+                <p><strong>Why is it important:</strong></p>
+                <textarea class="textarea-field"></textarea>
+            </div>
+        </div>
+
+        <div class="page-number">16</div>
+    </div>
+
+    <!-- DAY 4 PAGE 3 -->
+    <div class="page">
+        <div class="character-card">
+            <h4>Event 3</h4>
+            <p><strong>Event Name:</strong></p>
+            <input type="text" class="input-field">
+            <p><strong>When:</strong></p>
+            <input type="text" class="input-field">
+            <p><strong>What happened:</strong></p>
+            <textarea class="textarea-field"></textarea>
+            <p><strong>Why is it important:</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="tip-box">
+            <strong>Historical Locations:</strong> Mark these places on your map!<br>
+            • <strong>Ancient Ruins:</strong> Where something important happened long ago<br>
+            • <strong>Battlefields:</strong> Where a great conflict took place<br>
+            • <strong>Sacred Places:</strong> Special locations in your world's history<br>
+            • <strong>Lost Cities:</strong> Places that were once great but are now forgotten
+        </div>
+
+        <div class="drawing-space">
+            Timeline Drawing Space - Create a visual timeline here!
+        </div>
+
+        <div class="page-number">17</div>
+    </div>
+
+    <!-- DAY 5 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 5</div>
+            <div class="day-title">The Guidebook Station</div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">📖</span>Weekend Project: Create Your World's Guidebook</h3>
+            <p>Your mission is to create a short guidebook for visitors to your fantasy world!</p>
+        </div>
+
+        <div class="magic-system">
+            <h3>🌟 Section 1: Welcome to Your World</h3>
+            <p>Write a welcoming introduction to your world:</p>
+            <textarea class="textarea-field"
+                style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 350px;"></textarea>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🗺️</span>Section 2: Important Places to Visit</h3>
+            <p>List 5 must-see locations in your world:</p>
+
+            <div class="grid">
+                <div>
+                    <p><strong>1. Place:</strong></p>
+                    <input type="text" class="input-field">
+                    <p><strong>Why visit:</strong></p>
+                    <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+                </div>
+                <div>
+                    <p><strong>2. Place:</strong></p>
+                    <input type="text" class="input-field">
+                    <p><strong>Why visit:</strong></p>
+                    <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-number">18</div>
+    </div>
+
+    <!-- DAY 5 PAGE 2 -->
+    <div class="page">
         <div class="grid">
             <div>
-                <p><strong>👁️ See:</strong></p>
-                <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-                
-                <p><strong>👂 Hear:</strong></p>
-                <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-                
-                <p><strong>👃 Smell:</strong></p>
+                <p><strong>3. Place:</strong></p>
+                <input type="text" class="input-field">
+                <p><strong>Why visit:</strong></p>
                 <textarea class="textarea-field" style="min-height: 80px;"></textarea>
             </div>
             <div>
-                <p><strong>👅 Taste:</strong></p>
-                <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-                
-                <p><strong>✋ Touch/Feel:</strong></p>
-                <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-                
-                <p><strong>💭 Emotions:</strong></p>
+                <p><strong>4. Place:</strong></p>
+                <input type="text" class="input-field">
+                <p><strong>Why visit:</strong></p>
                 <textarea class="textarea-field" style="min-height: 80px;"></textarea>
             </div>
         </div>
-    </div>
-    
-    <div class="page-number">30</div>
-</div>
 
-<!-- DAY 8 PAGE 4 -->
-<div class="page">
-    <div class="magic-system">
-        <h3>✍️ Write Your Climax Scene</h3>
-        <p>Now write your climax! Remember to show, don't tell:</p>
-        <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 300px;"></textarea>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🔄</span>Revision Checklist</h3>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="show-emotions">
-                <label for="show-emotions">I showed my character's emotions instead of just saying them</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="sensory-details">
-                <label for="sensory-details">I included sensory details (sight, sound, etc.)</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="dialogue">
-                <label for="dialogue">I used dialogue to show character feelings</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="action-clear">
-                <label for="action-clear">The action is clear and exciting</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="resolution-clear">
-                <label for="resolution-clear">It's clear how the main conflict is resolved</label>
-            </div>
+        <div class="character-card">
+            <p><strong>5. Place:</strong></p>
+            <input type="text" class="input-field">
+            <p><strong>Why visit:</strong></p>
+            <textarea class="textarea-field" style="min-height: 80px;"></textarea>
         </div>
-    </div>
-    
-    <div class="page-number">31</div>
-</div>
 
-<!-- DAY 9 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 9</div>
-        <div class="day-title">Falling Action & Resolution</div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">📉</span>Understanding Falling Action</h3>
-        <p>After the climax comes the falling action - events that happen as a result of the climax. Think of it as the "cooling down" period of your story.</p>
-    </div>
-    
-    <div class="example-box">
-        <h4>What Happens in Falling Action?</h4>
-        <ul>
-            <li><strong>Immediate consequences</strong> of the climax</li>
-            <li><strong>Character reactions</strong> to what just happened</li>
-            <li><strong>Cleanup</strong> or dealing with the aftermath</li>
-            <li><strong>Smaller problems</strong> being solved</li>
-            <li><strong>Characters processing</strong> their experiences</li>
-        </ul>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🔄</span>Your Falling Action Events</h3>
-        
-        <p><strong>What happens immediately after your climax?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>How does your character react to what just happened?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>What needs to be fixed or cleaned up?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Are there any smaller problems left to solve?</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="page-number">32</div>
-</div>
+        <img src="https://cdn.pixabay.com/photo/2023/08/17/16/38/ai-generated-8196996_640.jpg" alt="magical world">
 
-<!-- DAY 9 PAGE 2 -->
-<div class="page">
-    <div class="timeline">
-        <h3>🔚 Resolution Planning</h3>
-        <p>The resolution is how your story ends. It should feel satisfying and complete!</p>
-        
-        <div class="timeline-event">
-            <h4>Character Growth</h4>
-            <p><strong>How has your main character changed?</strong></p>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>Relationship Changes</h4>
-            <p><strong>How have relationships with other characters changed?</strong></p>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>World Impact</h4>
-            <p><strong>How has your world changed because of the story events?</strong></p>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
-        
-        <div class="timeline-event">
-            <h4>New Normal</h4>
-            <p><strong>What is life like now for your character?</strong></p>
-            <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
-        </div>
+        <div class="page-number">19</div>
     </div>
-    
-    <div class="page-number">33</div>
-</div>
 
-<!-- DAY 9 PAGE 3 -->
-<div class="page">
-    <div class="activity-box">
-        <h3><span class="icon">🎯</span>Resolution Types</h3>
-        <p>Choose what kind of ending works best for your story:</p>
-        
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="happy-ending">
-                <label for="happy-ending"><strong>Happy Ending</strong> - Everything works out well</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="bittersweet">
-                <label for="bittersweet"><strong>Bittersweet</strong> - Good things happen, but at a cost</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="open-ending">
-                <label for="open-ending"><strong>Open Ending</strong> - Some questions are left unanswered</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="hopeful">
-                <label for="hopeful"><strong>Hopeful</strong> - Things aren't perfect, but there's hope</label>
-            </div>
+    <!-- DAY 5 PAGE 3 -->
+    <div class="page">
+        <div class="magic-system">
+            <h3>⚡ Section 4: Magic & Safety</h3>
+            <p>What should visitors know about magic in your world?</p>
+            <textarea class="textarea-field"
+                style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 120px;"></textarea>
         </div>
-    </div>
-    
-    <div class="magic-system">
-        <h3>✍️ Write Your Resolution</h3>
-        <p>Write the ending of your story. Show how things have changed and what your character has learned:</p>
-        <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 250px;"></textarea>
-    </div>
-    
-    <div class="tip-box">
-        <strong>Enrichment Activity:</strong> Think about themes in your story. What message or lesson does your story share? Write it below:
-    </div>
-    
-    <div class="writing-space">
-        <p><strong>My story's theme/message:</strong></p>
-    </div>
-    
-    <div class="page-number">34</div>
-</div>
 
-<!-- DAY 10 PAGE 1 -->
-<div class="page">
-    <div class="day-header">
-        <div class="day-number">DAY 10</div>
-        <div class="day-title">Final Stories & Sharing</div>
-    </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">✍️</span>Story Completion Time</h3>
-        <p>Today is your chance to put all the pieces together and complete your fantasy story!</p>
-    </div>
-    
-    <div class="checklist">
-        <h3><span class="icon">📋</span>Final Story Checklist</h3>
-        <div class="checklist-item">
-            <input type="checkbox" id="opening-complete">
-            <label for="opening-complete">Opening scene with character and setting</label>
+        <div class="activity-box">
+            <h3><span class="icon">🎭</span>Section 5: Cultural Tips</h3>
+            <p>How should visitors behave in your world?</p>
+            <textarea class="textarea-field" style="min-height: 120px;"></textarea>
         </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="conflict-clear">
-            <label for="conflict-clear">Clear main conflict</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="rising-action-events">
-            <label for="rising-action-events">Rising action events that build tension</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="exciting-climax">
-            <label for="exciting-climax">Exciting climax scene</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="falling-action-resolution">
-            <label for="falling-action-resolution">Falling action and satisfying resolution</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="show-dont-tell">
-            <label for="show-dont-tell">Uses "show don't tell" techniques</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="world-building">
-            <label for="world-building">Includes details from your world-building</label>
-        </div>
-        <div class="checklist-item">
-            <input type="checkbox" id="character-growth">
-            <label for="character-growth">Shows character growth or change</label>
-        </div>
-    </div>
-    
-    <div class="magic-system">
-        <h3>📝 Final Writing Space</h3>
-        <p>Use this space to write your complete story or make final revisions:</p>
-        <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 300px;"></textarea>
-    </div>
-    
-    <div class="page-number">35</div>
-</div>
 
-<!-- DAY 10 PAGE 2 -->
-<div class="page">
-    <div class="activity-box">
-        <h3><span class="icon">🎤</span>Presentation Preparation</h3>
-        <p>Get ready to share your amazing story with others!</p>
-        
-        <p><strong>Story Title:</strong></p>
-        <input type="text" class="input-field" style="font-size: 1.3em; font-family: 'Cinzel', serif;">
-        
-        <p><strong>One-sentence summary of your story:</strong></p>
-        <textarea class="textarea-field" style="min-height: 80px;"></textarea>
-        
-        <p><strong>Your favorite part to read aloud (mark the section):</strong></p>
-        <textarea class="textarea-field" style="min-height: 100px;"></textarea>
-        
-        <p><strong>What you're most proud of in your story:</strong></p>
-        <textarea class="textarea-field" style="min-height: 100px;"></textarea>
-        
-        <p><strong>What you learned about writing:</strong></p>
-        <textarea class="textarea-field" style="min-height: 100px;"></textarea>
-    </div>
-    
-    <div class="tip-box">
-        <strong>Presentation Tips:</strong><br>
-        • Speak clearly and make eye contact<br>
-        • Show your world map and character drawings<br>
-        • Share what inspired your story<br>
-        • Be ready to answer questions about your world!
-    </div>
-    
-    <div class="page-number">36</div>
-</div>
+        <div class="tip-box">
+            <strong>Station Activity Notes:</strong> Use the space below to record ideas from each station during your
+            group activity.
+        </div>
 
-<!-- DAY 10 PAGE 3 -->
-<div class="page">
-    <div class="activity-box">
-        <h3><span class="icon">🎮</span>Fantasy Games & Activities</h3>
-        <p>Celebrate your completed stories with these fun activities!</p>
-    </div>
-    
-    <div class="character-card">
-        <h4>🎲 World-Building Game</h4>
-        <p><strong>Rules:</strong> Roll dice or draw cards to create random fantasy scenarios. Work together to solve creative problems!</p>
-        
         <div class="grid">
             <div>
-                <p><strong>Characters:</strong></p>
-                <ul>
-                    <li>Brave knight</li>
-                    <li>Wise wizard</li>
-                    <li>Clever thief</li>
-                    <li>Kind healer</li>
-                </ul>
+                <p><strong>Geography Station Ideas:</strong></p>
+                <textarea class="textarea-field" style="min-height: 100px;"></textarea>
+
+                <p><strong>Culture Station Ideas:</strong></p>
+                <textarea class="textarea-field" style="min-height: 100px;"></textarea>
             </div>
             <div>
-                <p><strong>Challenges:</strong></p>
+                <p><strong>Magic Station Ideas:</strong></p>
+                <textarea class="textarea-field" style="min-height: 100px;"></textarea>
+
+                <p><strong>History Station Ideas:</strong></p>
+                <textarea class="textarea-field" style="min-height: 100px;"></textarea>
+            </div>
+        </div>
+
+        <div class="page-number">20</div>
+    </div>
+
+    <!-- DAY 6 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 6</div>
+            <div class="day-title">Character Creation</div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🦸‍♀️</span>Meet Your Main Character</h3>
+            <p>Every great fantasy story needs a hero! Time to create yours.</p>
+        </div>
+
+        <div class="character-card">
+            <h3>Basic Character Information</h3>
+
+            <div class="grid">
+                <div>
+                    <p><strong>Name:</strong></p>
+                    <input type="text" class="input-field">
+                </div>
+                <div>
+                    <p><strong>Age:</strong></p>
+                    <input type="text" class="input-field">
+                </div>
+            </div>
+
+            <p><strong>What do they look like?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Where are they from in your world?</strong></p>
+            <input type="text" class="input-field">
+
+            <p><strong>What makes them special?</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="drawing-space">
+            Draw your main character here!
+        </div>
+
+        <div class="page-number">21</div>
+    </div>
+
+    <!-- DAY 6 PAGE 2 -->
+    <div class="page">
+        <div class="activity-box">
+            <h3><span class="icon">🏠</span>Character's Background</h3>
+
+            <p><strong>Family:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Home:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Daily Life (What do they do on a normal day?):</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Dreams/Goals (What do they want?):</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Fears (What scares them?):</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">22</div>
+    </div>
+
+    <!-- DAY 6 PAGE 3 -->
+    <div class="page">
+        <div class="activity-box">
+            <h3><span class="icon">💪</span>Character's Abilities</h3>
+
+            <p><strong>Special Skills:</strong></p>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="magic-skill">
+                    <label for="magic-skill">Good with magic</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="brave">
+                    <label for="brave">Brave in danger</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="puzzles">
+                    <label for="puzzles">Good at solving puzzles</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="kind">
+                    <label for="kind">Kind to others</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="quick">
+                    <label for="quick">Quick thinking</label>
+                </div>
+            </div>
+            <p><strong>Other:</strong></p>
+            <input type="text" class="input-field">
+
+            <p><strong>Weaknesses (Everyone has them!):</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="example-box">
+            <h4>What is Exposition?</h4>
+            <p><strong>Exposition</strong> means introducing your character and setting. Here's how to do it well:</p>
+            <p><strong>Good Exposition Shows:</strong></p>
+            <ul>
+                <li>Where the character is</li>
+                <li>What their situation is</li>
+                <li>A hint about what's coming</li>
+            </ul>
+            <p><em>Example: "ONCE there were four children whose names were Peter, Susan, Edmund and Lucy. This story is
+                    about something that
+                    happened to them when they were sent away from London during the war because of the air-raids. They
+                    were sent to the
+                    house of an old Professor who lived in the heart of the country, ten miles from the nearest railway
+                    station and two
+                    miles from the nearest post office."</em></p>
+        </div>
+
+        <div class="page-number">23</div>
+    </div>
+
+    <!-- DAY 6 PAGE 4 -->
+    <div class="page">
+        <div class="magic-system">
+            <h3>✍️ Your Opening Scene</h3>
+            <p>Write the opening paragraph of your story:</p>
+            <textarea class="textarea-field"
+                style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 200px;"></textarea>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🎬</span>Setting Details</h3>
+
+            <p><strong>Where does your story begin?</strong></p>
+            <input type="text" class="input-field">
+
+            <p><strong>What time of day/year is it?</strong></p>
+            <input type="text" class="input-field">
+
+            <p><strong>What's the mood/atmosphere?</strong></p>
+            <input type="text" class="input-field">
+
+            <p><strong>What hint of adventure do you give?</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">24</div>
+    </div>
+
+    <!-- DAY 7 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 7</div>
+            <div class="day-title">Conflicts & Rising Action</div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">⚔️</span>Understanding Conflict</h3>
+            <p>Every good story needs conflict - problems for your character to solve!</p>
+        </div>
+
+        <div class="grid">
+            <div class="character-card">
+                <h4>🧠 Internal Conflict</h4>
+                <p><em>(Inside the character)</em></p>
                 <ul>
-                    <li>Crossing a dangerous bridge</li>
-                    <li>Solving a riddle</li>
-                    <li>Escaping a maze</li>
-                    <li>Taming a dragon</li>
+                    <li>Fear of trying something new</li>
+                    <li>Choosing between right and wrong</li>
+                    <li>Learning to believe in themselves</li>
+                </ul>
+            </div>
+            <div class="character-card">
+                <h4>🌍 External Conflict</h4>
+                <p><em>(Outside forces)</em></p>
+                <ul>
+                    <li>Fighting a villain</li>
+                    <li>Surviving a dangerous place</li>
+                    <li>Solving a mystery</li>
                 </ul>
             </div>
         </div>
-    </div>
-    
-    <div class="character-card">
-        <h4>🔮 Magic System Challenge</h4>
-        <p>Create a new magic system as a group using these prompts:</p>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" id="magic-source">
-                <label for="magic-source">What is the source of magic?</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="magic-cost">
-                <label for="magic-cost">What does it cost to use magic?</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" id="magic-limit">
-                <label for="magic-limit">What are the limitations?</label>
-            </div>
-        </div>
-    </div>
-    
-    <div class="character-card">
-        <h4>🏆 Story Superlatives</h4>
-        <p>Vote for awards in these categories:</p>
-        <ul>
-            <li>Most Creative World</li>
-            <li>Most Interesting Character</li>
-            <li>Most Unique Magic System</li>
-            <li>Most Exciting Adventure</li>
-            <li>Most Surprising Twist</li>
-            <li>Most Heartwarming Ending</li>
-        </ul>
-    </div>
-    
-    <div class="page-number">37</div>
-</div>
 
-<!-- DAY 10 PAGE 4 -->
-<div class="page">
-    <div class="magic-system">
-        <h3>📚 Recommended Fantasy Books</h3>
-        <p>Continue your fantasy journey with these amazing books!</p>
+        <div class="activity-box">
+            <h3><span class="icon">📝</span>Your Story's Conflicts</h3>
+
+            <p><strong>Main External Conflict (The big problem):</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Internal Conflict (Your character's inner struggle):</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Smaller Conflicts (Problems along the way):</strong></p>
+            <p><strong>1.</strong></p>
+            <input type="text" class="input-field">
+            <p><strong>2.</strong></p>
+            <input type="text" class="input-field">
+            <p><strong>3.</strong></p>
+            <input type="text" class="input-field">
+        </div>
+
+        <div class="page-number">25</div>
     </div>
-    
-    <div class="grid">
+
+    <!-- DAY 7 PAGE 2 -->
+    <div class="page">
+        <div class="timeline">
+            <h3>📈 Rising Action Planning</h3>
+            <p>Rising action is all the events that build up to the most exciting part of your story.</p>
+
+            <div class="timeline-event">
+                <h4>Event 1 (First sign of trouble)</h4>
+                <textarea class="textarea-field"
+                    style="background: rgba(253, 253, 253, 0.9); color: #140305;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Event 2 (Problem gets bigger)</h4>
+                <textarea class="textarea-field"
+                    style="background: rgba(255, 254, 253, 0.9); color: #070402;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Event 3 (Character faces a challenge)</h4>
+                <textarea class="textarea-field"
+                    style="background: rgba(252, 251, 251, 0.9); color: #0a0602;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Event 4 (Stakes get higher)</h4>
+                <textarea class="textarea-field"
+                    style="background: rgba(248, 248, 248, 0.9); color: #0b0e04;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Event 5 (Almost at the climax!)</h4>
+                <textarea class="textarea-field"
+                    style="background: rgba(255, 255, 255, 0.9); color: #105e37;"></textarea>
+            </div>
+        </div>
+
+        <div class="page-number">26</div>
+    </div>
+
+    <!-- DAY 7 PAGE 3 -->
+    <div class="page">
+        <div class="tip-box">
+            <strong>Conflict Escalation:</strong> Each event should make the problem bigger or more urgent.
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">📊</span>How does each event make things worse or more exciting?</h3>
+
+            <p><strong>Event 1 → Event 2:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Event 2 → Event 3:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Event 3 → Event 4:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Event 4 → Event 5:</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="writing-space">
+            <p><strong>Additional notes about your story's conflicts:</strong></p>
+        </div>
+
+        <div class="page-number">27</div>
+    </div>
+
+    <!-- DAY 8 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 8</div>
+            <div class="day-title">Show Don't Tell & Climax</div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🎭</span>Show Don't Tell</h3>
+            <p>Instead of telling readers what's happening, show them through actions, dialogue, and details!</p>
+        </div>
+
         <div class="example-box">
-            <h4>For Younger Readers</h4>
+            <h4>Tell vs. Show Examples</h4>
+            <p><strong>Tell:</strong> <em>Sarah was scared.</em></p>
+            <p><strong>Show:</strong> <em>Sarah's hands shook as she reached for the door handle, and she could hear her
+                    heart pounding in her ears.</em></p>
+            <br>
+            <p><strong>Tell:</strong> <em>The dragon was big.</em></p>
+            <p><strong>Show:</strong> <em>The dragon's shadow covered the entire village, and when it roared, windows
+                    shattered three streets away.</em></p>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">✏️</span>Practice Show Don't Tell</h3>
+            <p>Rewrite these "tell" sentences as "show" sentences:</p>
+
+            <p><strong>Tell:</strong> <em>The magical forest was beautiful.</em></p>
+            <p><strong>Show:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Tell:</strong> <em>Marcus was angry.</em></p>
+            <p><strong>Show:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Tell:</strong> <em>The spell was powerful.</em></p>
+            <p><strong>Show:</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">28</div>
+    </div>
+
+    <!-- DAY 8 PAGE 2 -->
+    <div class="page">
+        <div class="magic-system">
+            <h3>🎯 Writing Your Climax</h3>
+            <p>The climax is the most exciting part of your story - where your character faces their biggest challenge!
+            </p>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🗺️</span>Climax Planning</h3>
+
+            <p><strong>Where does the climax happen?</strong></p>
+            <input type="text" class="input-field">
+
+            <p><strong>Who is involved?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>What is the main challenge your character faces?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>What must your character do to succeed?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>How does your character overcome this challenge?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>What role does the internal conflict play?</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">29</div>
+    </div>
+
+    <!-- DAY 8 PAGE 3 -->
+    <div class="page">
+        <div class="activity-box">
+            <h3><span class="icon">🥊</span>Action Sequence Enrichment</h3>
+            <p>Make your climax exciting with these techniques:</p>
+
+            <div class="tip-box">
+                <strong>Action Writing Tips:</strong><br>
+                • Use short, quick sentences during fast action<br>
+                • Show the character's physical reactions<br>
+                • Include sounds, smells, and textures<br>
+                • Let readers feel the character's emotions
+            </div>
+
+            <p><strong>Describe the setting of your climax using all five senses:</strong></p>
+
+            <div class="grid">
+                <div>
+                    <p><strong>👁️ See:</strong></p>
+                    <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+
+                    <p><strong>👂 Hear:</strong></p>
+                    <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+
+                    <p><strong>👃 Smell:</strong></p>
+                    <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+                </div>
+                <div>
+                    <p><strong>👅 Taste:</strong></p>
+                    <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+
+                    <p><strong>✋ Touch/Feel:</strong></p>
+                    <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+
+                    <p><strong>💭 Emotions:</strong></p>
+                    <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-number">30</div>
+    </div>
+
+    <!-- DAY 8 PAGE 4 -->
+    <div class="page">
+        <div class="magic-system">
+            <h3>✍️ Write Your Climax Scene</h3>
+            <p>Now write your climax! Remember to show, don't tell:</p>
+            <textarea class="textarea-field"
+                style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 300px;"></textarea>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🔄</span>Revision Checklist</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="show-emotions">
+                    <label for="show-emotions">I showed my character's emotions instead of just saying them</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="sensory-details">
+                    <label for="sensory-details">I included sensory details (sight, sound, etc.)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="dialogue">
+                    <label for="dialogue">I used dialogue to show character feelings</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="action-clear">
+                    <label for="action-clear">The action is clear and exciting</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="resolution-clear">
+                    <label for="resolution-clear">It's clear how the main conflict is resolved</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-number">31</div>
+    </div>
+
+    <!-- DAY 9 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 9</div>
+            <div class="day-title">Falling Action & Resolution</div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">📉</span>Understanding Falling Action</h3>
+            <p>After the climax comes the falling action - events that happen as a result of the climax. Think of it as
+                the "cooling down" period of your story.</p>
+        </div>
+
+        <div class="example-box">
+            <h4>What Happens in Falling Action?</h4>
             <ul>
-                <li><strong>The Lion, the Witch and the Wardrobe</strong> by C.S. Lewis</li>
-                <li><strong>The Phantom Tollbooth</strong> by Norton Juster</li>
-                <li><strong>The Princess Bride</strong> by William Goldman</li>
-                <li><strong>Ella Enchanted</strong> by Gail Carson Levine</li>
-                <li><strong>The Girl Who Drank the Moon</strong> by Kelly Barnhill</li>
-                <li><strong>Dragon Post</strong> by Jessica Day George</li>
+                <li><strong>Immediate consequences</strong> of the climax</li>
+                <li><strong>Character reactions</strong> to what just happened</li>
+                <li><strong>Cleanup</strong> or dealing with the aftermath</li>
+                <li><strong>Smaller problems</strong> being solved</li>
+                <li><strong>Characters processing</strong> their experiences</li>
             </ul>
         </div>
-        <div class="example-box">
-            <h4>For Advanced Readers</h4>
+
+        <div class="activity-box">
+            <h3><span class="icon">🔄</span>Your Falling Action Events</h3>
+
+            <p><strong>What happens immediately after your climax?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>How does your character react to what just happened?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>What needs to be fixed or cleaned up?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Are there any smaller problems left to solve?</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="page-number">32</div>
+    </div>
+
+    <!-- DAY 9 PAGE 2 -->
+    <div class="page">
+        <div class="timeline">
+            <h3>🔚 Resolution Planning</h3>
+            <p>The resolution is how your story ends. It should feel satisfying and complete!</p>
+
+            <div class="timeline-event">
+                <h4>Character Growth</h4>
+                <p><strong>How has your main character changed?</strong></p>
+                <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Relationship Changes</h4>
+                <p><strong>How have relationships with other characters changed?</strong></p>
+                <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>World Impact</h4>
+                <p><strong>How has your world changed because of the story events?</strong></p>
+                <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+            </div>
+
+            <div class="timeline-event">
+                <h4>New Normal</h4>
+                <p><strong>What is life like now for your character?</strong></p>
+                <textarea class="textarea-field" style="background: rgba(255,255,255,0.9); color: #2c3e50;"></textarea>
+            </div>
+        </div>
+
+        <div class="page-number">33</div>
+    </div>
+
+    <!-- DAY 9 PAGE 3 -->
+    <div class="page">
+        <div class="activity-box">
+            <h3><span class="icon">🎯</span>Resolution Types</h3>
+            <p>Choose what kind of ending works best for your story:</p>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="happy-ending">
+                    <label for="happy-ending"><strong>Happy Ending</strong> - Everything works out well</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="tragic">
+                    <label for="Tragic"><strong>Tragic</strong> - Things turn out very, very, badly.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="bittersweet">
+                    <label for="bittersweet"><strong>Bittersweet</strong> - Good things happen, but at a cost</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="open-ending">
+                    <label for="open-ending"><strong>Open Ending</strong> - Some questions are left unanswered</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="hopeful">
+                    <label for="hopeful"><strong>Hopeful</strong> - Things aren't perfect, but there's hope</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="magic-system">
+            <h3>✍️ Write Your Resolution</h3>
+            <p>Write the ending of your story. Show how things have changed and what your character has learned:</p>
+            <textarea class="textarea-field"
+                style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 250px;"></textarea>
+        </div>
+
+        <div class="tip-box">
+            <strong>Enrichment Activity:</strong> Think about themes in your story. What message or lesson does your
+            story share? Write it below:
+        </div>
+
+        <div class="writing-space">
+            <p><strong>My story's theme/message:</strong></p>
+        </div>
+
+        <div class="page-number">34</div>
+    </div>
+
+    <!-- DAY 10 PAGE 1 -->
+    <div class="page">
+        <div class="day-header">
+            <div class="day-number">DAY 10</div>
+            <div class="day-title">Final Stories & Sharing</div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">✍️</span>Story Completion Time</h3>
+            <p>Today is your chance to put all the pieces together and complete your fantasy story!</p>
+        </div>
+
+        <div class="checklist">
+            <h3><span class="icon">📋</span>Final Story Checklist</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="opening-complete">
+                <label for="opening-complete">Opening scene with character and setting</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="conflict-clear">
+                <label for="conflict-clear">Clear main conflict</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="rising-action-events">
+                <label for="rising-action-events">Rising action events that build tension</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="exciting-climax">
+                <label for="exciting-climax">Exciting climax scene</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="falling-action-resolution">
+                <label for="falling-action-resolution">Falling action and satisfying resolution</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="show-dont-tell">
+                <label for="show-dont-tell">Uses "show don't tell" techniques</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="world-building">
+                <label for="world-building">Includes details from your world-building</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="character-growth">
+                <label for="character-growth">Shows character growth or change</label>
+            </div>
+        </div>
+
+        <div class="magic-system">
+            <h3>📝 Final Writing Space</h3>
+            <p>Use this space to write your complete story or make final revisions:</p>
+            <textarea class="textarea-field"
+                style="background: rgba(255,255,255,0.9); color: #2c3e50; min-height: 650px;"></textarea>
+        </div>
+
+        <div class="page-number">35</div>
+    </div>
+
+    <!-- DAY 10 PAGE 2 -->
+    <div class="page">
+        <div class="activity-box">
+            <h3><span class="icon">🎤</span>Presentation Preparation</h3>
+            <p>Get ready to share your amazing story with others!</p>
+
+            <p><strong>Story Title:</strong></p>
+            <input type="text" class="input-field" style="font-size: 1.3em; font-family: 'Cinzel', serif;">
+
+            <p><strong>One-sentence summary of your story:</strong></p>
+            <textarea class="textarea-field" style="min-height: 80px;"></textarea>
+
+            <p><strong>Your favorite part to read aloud (mark the section):</strong></p>
+            <textarea class="textarea-field" style="min-height: 100px;"></textarea>
+
+            <p><strong>What you're most proud of in your story:</strong></p>
+            <textarea class="textarea-field" style="min-height: 100px;"></textarea>
+
+            <p><strong>What you learned about writing:</strong></p>
+            <textarea class="textarea-field" style="min-height: 100px;"></textarea>
+        </div>
+
+        <div class="tip-box">
+            <strong>Presentation Tips:</strong><br>
+            • Speak clearly and make eye contact<br>
+            • Show your world map and character drawings<br>
+            • Share what inspired your story<br>
+            • Be ready to answer questions about your world!
+        </div>
+
+        <div class="page-number">36</div>
+    </div>
+
+    <!-- DAY 10 PAGE 3 -->
+    <div class="page">
+        <div class="activity-box">
+            <h3><span class="icon">🎮</span>Fantasy Games & Activities</h3>
+            <p>Celebrate your completed stories with these fun activities!</p>
+        </div>
+
+        <div class="character-card">
+            <h4>🎲 World-Building Game</h4>
+            <p><strong>Rules:</strong> Roll dice or draw cards to create random fantasy scenarios. Work together to
+                solve creative problems!</p>
+
+            <div class="grid">
+                <div>
+                    <p><strong>Characters:</strong></p>
+                    <ul>
+                        <li>Brave knight</li>
+                        <li>Wise wizard</li>
+                        <li>Clever thief</li>
+                        <li>Kind healer</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>Challenges:</strong></p>
+                    <ul>
+                        <li>Crossing a dangerous bridge</li>
+                        <li>Solving a riddle</li>
+                        <li>Escaping a maze</li>
+                        <li>Taming a dragon</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="character-card">
+            <h4>🔮 Magic System Challenge</h4>
+            <p>Create a new magic system as a group using these prompts:</p>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="magic-source">
+                    <label for="magic-source">What is the source of magic?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="magic-cost">
+                    <label for="magic-cost">What does it cost to use magic?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="magic-limit">
+                    <label for="magic-limit">What are the limitations?</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="character-card">
+            <h4>🏆 Story Superlatives</h4>
+            <p>Vote for awards in these categories:</p>
             <ul>
-                <li><strong>The Hobbit</strong> by J.R.R. Tolkien</li>
-                <li><strong>Harry Potter</strong> series by J.K. Rowling</li>
-                <li><strong>Percy Jackson</strong> series by Rick Riordan</li>
-                <li><strong>The Dark is Rising</strong> by Susan Cooper</li>
-                <li><strong>A Wrinkle in Time</strong> by Madeleine L'Engle</li>
-                <li><strong>The Golden Compass</strong> by Philip Pullman</li>
+                <li>Most Creative World</li>
+                <li>Most Interesting Character</li>
+                <li>Most Unique Magic System</li>
+                <li>Most Exciting Adventure</li>
+                <li>Most Surprising Twist</li>
+                <li>Most Heartwarming Ending</li>
             </ul>
         </div>
+
+        <div class="page-number">37</div>
     </div>
-    
-    <div class="activity-box">
-        <h3><span class="icon">🌟</span>Your Fantasy Writing Future</h3>
-        
-        <p><strong>What's next for your fantasy world?</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>Ideas for your next story:</strong></p>
-        <textarea class="textarea-field"></textarea>
-        
-        <p><strong>What kind of stories do you want to write next?</strong></p>
-        <textarea class="textarea-field"></textarea>
-    </div>
-    
-    <div class="magic-system">
-        <h3>🎉 Congratulations!</h3>
-        <p style="text-align: center; font-size: 1.2em;">You are now an official fantasy world-builder and storyteller! Keep writing, keep dreaming, and keep creating magical worlds!</p>
-    </div>
-    
-    <div class="page-number">38
+
+    <!-- DAY 10 PAGE 4 -->
+    <div class="page">
+        <div class="magic-system">
+            <h3>📚 Recommended Fantasy Books</h3>
+            <p>Continue your fantasy journey with these amazing books!</p>
+        </div>
+
+        <div class="grid">
+            <div class="example-box">
+                <h4>For Younger Readers</h4>
+                <ul>
+                    <li><strong>The Lion, the Witch and the Wardrobe</strong> by C.S. Lewis</li>
+                    <li><strong>The Phantom Tollbooth</strong> by Norton Juster</li>
+                    <li><strong>The Princess Bride</strong> by William Goldman</li>
+                    <li><strong>Ella Enchanted</strong> by Gail Carson Levine</li>
+                    <li><strong>The Girl Who Drank the Moon</strong> by Kelly Barnhill</li>
+                    <li><strong>Dragon Post</strong> by Jessica Day George</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <h4>For Advanced Readers</h4>
+                <ul>
+                    <li><strong>The Hobbit</strong> by J.R.R. Tolkien</li>
+                    <li><strong>Harry Potter</strong> series by J.K. Rowling</li>
+                    <li><strong>Percy Jackson</strong> series by Rick Riordan</li>
+                    <li><strong>The Dark is Rising</strong> by Susan Cooper</li>
+                    <li><strong>A Wrinkle in Time</strong> by Madeleine L'Engle</li>
+                    <li><strong>The Golden Compass</strong> by Philip Pullman</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="activity-box">
+            <h3><span class="icon">🌟</span>Your Fantasy Writing Future</h3>
+
+            <p><strong>What's next for your fantasy world?</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>Ideas for your next story:</strong></p>
+            <textarea class="textarea-field"></textarea>
+
+            <p><strong>What kind of stories do you want to write next?</strong></p>
+            <textarea class="textarea-field"></textarea>
+        </div>
+
+        <div class="magic-system">
+            <h3>🎉 Congratulations!</h3>
+            <p style="text-align: center; font-size: 1.2em;">You are now an official fantasy world-builder and
+                storyteller! Keep writing, keep dreaming, and keep creating magical worlds!</p>
+        </div>
+
+        <div class="page-number">38
